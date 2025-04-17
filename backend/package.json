@@ -16,11 +16,14 @@
     "devDependencies": {
         "@types/express": "^5.0.1",
         "@types/node": "^22.14.1",
+        "@types/sqlite3": "^3.1.11",
         "concurrently": "^9.1.2",
         "nodemon": "^3.1.9",
         "typescript": "^5.8.3"
     },
     "dependencies": {
-        "express": "^5.1.0"
+        "express": "^5.1.0",
+        "sqlite3": "^5.1.7",
+        "zod": "^4.0.0-beta.20250417T043022"
     }
 }

@@ -1,3 +1,4 @@
-const PORT = process.env.PORT;
+const PORT = process.env.PORT as string;
+const DB_PATH = process.env.DB_PATH as string;
 
-export { PORT };
+export { DB_PATH, PORT };
