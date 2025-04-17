@@ -22,6 +22,16 @@ app.post("/feedback", async (req, res) => {
     res.status(201).send("Feedback submitted");
 });
 
+app.get("/feedback", async (req, res) => {
+    db.all("SELECT * FROM feedback", [], (err, rows) => {
+        if (err) {
+            res.status(500).send("Error fetching feedback");
+            return;
+        }
+        res.status(200).json(rows);
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
