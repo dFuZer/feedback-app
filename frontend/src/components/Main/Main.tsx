@@ -19,15 +19,15 @@ const Main: React.FC = () => {
         }
     };
 
-    const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleChange = (event:any) => {
         setMessage(event.target.value);
     };
 
-    const handleCategory = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleCategory = (event:any) => {
         setCategory(event.target.value);
     };
 
-    const handleTitle = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleTitle = (event:any) => {
         setTitle(event.target.value);
     };
 
@@ -39,7 +39,7 @@ const Main: React.FC = () => {
 
             {showForm && (
                 <>
-                <div className='main'>
+            <div className='main'>
             <h2>Envoyer votre feedback</h2>
             <form onSubmit={handleSubmit}>
 
@@ -53,8 +53,7 @@ const Main: React.FC = () => {
                     <option value="d">D</option>
                 </select>
 
-                <textarea value={message} onChange={handleChange} placeholder="Écrivez votre message ici" rows={10}
-  />
+                <textarea value={message} onChange={handleChange} placeholder="Écrivez votre message ici" rows={10} />
                 <br />
                 <button className='secondButton' type="submit">Envoyer</button>
             </form>
