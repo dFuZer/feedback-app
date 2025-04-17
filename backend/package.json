@@ -7,7 +7,8 @@
         "dev:build": "tsc -w",
         "dev:run": "nodemon --env-file=.env --delay 100ms --watch dist dist/index.js",
         "dev": "tsc && concurrently npm:dev:*",
-        "start": "tsc && node --env-file=.env dist/index.js"
+        "start": "tsc && node --env-file=.env dist/index.js",
+        "db:init": "tsc && node --env-file=.env dist/scripts/seed.js"
     },
     "keywords": [],
     "author": "",
