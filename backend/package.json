@@ -23,7 +23,7 @@
     },
     "dependencies": {
         "express": "^5.1.0",
-        "sqlite": "^5.1.1",
-        "sqlite3": "^5.1.7"
+        "sqlite3": "^5.1.7",
+        "zod": "^4.0.0-beta.20250417T043022"
     }
 }
