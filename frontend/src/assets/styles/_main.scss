@@ -1,28 +1,25 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  
-
 .main {
-    width: 100%;
+    width: 17rem;
     padding: 2rem;
     background: antiquewhite;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .main h2 {
     text-align: center;
+    margin-top: 0;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 100%;
 }
 
 input {
@@ -31,14 +28,31 @@ input {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 100%;
 }
 
 textarea {
-    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
     resize: vertical;
+    width: 100%;
+}
+
+.firstButton {
+    width: 180px;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.firstButton:hover {
+    background-color: #0069d9;
 }
 
 .secondButton {
@@ -57,10 +71,28 @@ textarea {
 }
 
 select {
-    width: 48%;
-    padding: 2px;
+    padding: 2px 0;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 7px 0 25px;
+    width: 100%;
+}
+
+.sliderContainer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+
+.pageWrapper {
+    padding: 2rem 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #fff;
 }

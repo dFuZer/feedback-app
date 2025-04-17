@@ -1,64 +1,93 @@
+// Main.tsx
 import React, { useState } from 'react';
+import Slider from '../Slider';
+import FeedbackForm from '../FeedbackForm';
 
 const Main: React.FC = () => {
     const [showForm, setShowForm] = useState<boolean>(false);
-    const [message, setMessage] = useState<string>('');
-    const [category, setCategory] = useState<string>('');
-    const [title, setTitle] = useState<string>('');
 
-    const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        if (!message || category == '' || !title ) {
-            alert('Veuillez entrer un titre, un message et séléctionner une catégorie avant de soumettre.');
-        } else {   
-            alert('Votre feedback a été soumis !');
-            setShowForm(false)
-            setMessage(''); 
-            setCategory('');
-            setTitle('');
+    const sliderOptions = {
+        type: "carousel" as "carousel",
+        perView: 3,
+        gap: 20,
+        autoplay: 5000,
+        focusAt: "center" as "center",
+        animationDuration: 600,
+        bound: true,
+        breakpoints: {
+            1024: { perView: 2 },
+            768: { perView: 1 }
         }
     };
 
-    const handleChange = (event:any) => {
-        setMessage(event.target.value);
-    };
+    const slidesArray = [
+        <div className="slide-content">
+            <div className="feedback-title">
+                <strong>La tarte</strong>
+            </div>
+            <blockquote>
+                "Sans vouloir la ramener, la seule différence concrète avec des briques, c'est que vous appelez ça des tartes hein !"
+            </blockquote>
+        </div>,
 
-    const handleCategory = (event:any) => {
-        setCategory(event.target.value);
-    };
+        <div className="slide-content">
+            <div className="feedback-title">
+                <strong>Démon ou pucelle ?</strong>
+            </div>
+            <blockquote>
+                "- C'est vrai que vous êtes le fils d'un démon et d'une pucelle ?
+                - Oui pourquoi ?
+                - Vous avez plus pris de la pucelle…"
+            </blockquote>
+        </div>,
 
-    const handleTitle = (event:any) => {
-        setTitle(event.target.value);
-    };
+        <div className="slide-content">
+            <div className="feedback-title">
+                <strong>Temporalité</strong>
+            </div>
+            <blockquote>
+                "De toute façon, les réunions de la Table Ronde c'est deux fois par mois. Donc si le mec il dit après-demain à partir de dans deux jours, suivant s'il le dit à la fin du mois, ça reporte."
+            </blockquote>
+        </div>,
+
+        <div className="slide-content">
+            <div className="feedback-title">
+                <strong>Burn out</strong>
+            </div>
+            <blockquote>
+                "Non, moi je crois qu'il faut que vous arrêtiez d'essayer de dire des trucs… Ça vous fatigue, déjà. Puis pour les autres vous vous rendez pas compte de ce que c'est. Moi, quand vous faites ça, ça me fout une angoisse… Je pourrais vous tuer je crois. De chagrin hein. Je vous jure, c'est pas bien. Il faut plus que vous parliez avec des gens."
+            </blockquote>
+        </div>,
+    ]
 
     return (
-        <div>
-            {!showForm && (
-                <button className='firstButton' onClick={() => setShowForm(true)}>Afficher le formulaire</button>
-            )}
-
-            {showForm && (
+        <div className="pageWrapper">
+            {!showForm ? (
                 <>
-            <div className='main'>
-            <h2>Envoyer votre feedback</h2>
-            <form onSubmit={handleSubmit}>
+                    <button className='firstButton' onClick={() => setShowForm(true)}>
+                        Afficher le formulaire
+                    </button>
 
-                <input type="text" value={title} onChange={handleTitle} placeholder='Titre :' />
-                <label htmlFor="category">Choisir une catégorie :</label>
-                <select id="category" value={category} onChange={handleCategory}>
-                    <option value=""></option>
-                    <option value="a">A</option>
-                    <option value="b">B</option>
-                    <option value="c">C</option>
-                    <option value="d">D</option>
-                </select>
-
-                <textarea value={message} onChange={handleChange} placeholder="Écrivez votre message ici" rows={10} />
-                <br />
-                <button className='secondButton' type="submit">Envoyer</button>
-            </form>
-            </div>
-            </>
+                    <div className="sliderContainer">
+                        <Slider 
+                            slides={slidesArray} 
+                            options={sliderOptions}
+                            className="diverse-content-slider"
+                        />
+                    </div>
+                </>
+            ) : (
+                <>
+                    <FeedbackForm onClose={() => setShowForm(false)} />
+                    
+                    <div className="sliderContainer">
+                        <Slider 
+                            slides={slidesArray} 
+                            options={sliderOptions}
+                            className="diverse-content-slider"
+                        />
+                    </div>
+                </>
             )}
         </div>
     );
