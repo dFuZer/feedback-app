@@ -7,7 +7,8 @@
         "dev:build": "tsc -w",
         "dev:run": "nodemon --env-file=.env --delay 100ms --watch dist dist/index.js",
         "dev": "tsc && concurrently npm:dev:*",
-        "start": "tsc && node --env-file=.env dist/index.js"
+        "start": "tsc && node --env-file=.env dist/index.js",
+        "db:init": "tsc && node --env-file=.env dist/scripts/seed.js"
     },
     "keywords": [],
     "author": "",
@@ -23,6 +24,7 @@
     },
     "dependencies": {
         "express": "^5.1.0",
+        "sqlite": "^5.1.1",
         "sqlite3": "^5.1.7",
         "zod": "^4.0.0-beta.20250417T043022"
     }
