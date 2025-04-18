@@ -1,16 +1,50 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { getFeedbacks } from "../../data/api";
 import { renderSlides } from "../../utils/renderSlides";
+import BentoGrid from "../BentoGrid";
 import FeedbackForm from "../FeedbackForm";
+import SearchBar from "../Searchbar";
 import Slider from "../Slider";
 
 const Main: React.FC = () => {
     const [showForm, setShowForm] = useState<boolean>(false);
-    const feedbacks = useQuery({
+    const feedbackQuery = useQuery({
         queryKey: ["feedbacks"],
         queryFn: getFeedbacks,
     });
+    const [initialLoaded, setInitialLoaded] = useState<boolean>(false);
+
+    const feedbacks = useMemo(() => feedbackQuery.data ?? [], [feedbackQuery.data]);
+    type Feedback = (typeof feedbacks)[number];
+    const [filteredSlides, setFilteredSlides] = useState<Feedback[]>([]);
+
+    useEffect(() => {
+        if (feedbackQuery.status === "success" && !initialLoaded) {
+            setFilteredSlides(feedbackQuery.data!);
+            setInitialLoaded(true);
+        }
+    }, [feedbackQuery.status]);
+
+    useEffect(() => {
+        console.log({ feedbacks, filteredSlides });
+    }, [feedbacks, filteredSlides]);
+
+    const getRandomSlides = (slides: typeof feedbacks, count: number) => {
+        const shuffled = [...slides].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+    };
+
+    const randomSlides = getRandomSlides(filteredSlides, 5);
+
+    const onSearchButtonClick = (query: string) => {
+        const lowerQuery = query.toLowerCase();
+        const filtered = feedbacks.filter(
+            (slide) =>
+                slide.title.toLowerCase().includes(lowerQuery) || slide.content.toLowerCase().includes(lowerQuery)
+        );
+        setFilteredSlides(filtered);
+    };
 
     const sliderOptions = {
         type: "carousel" as const,
@@ -37,7 +71,16 @@ const Main: React.FC = () => {
             )}
             <div className="sliderContainer">
                 <Slider
-                    slides={renderSlides(feedbacks.data ?? [])}
+                    slides={renderSlides(randomSlides)}
+                    options={sliderOptions}
+                    className="diverse-content-slider"
+                />
+                <SearchBar onSearch={onSearchButtonClick} />
+            </div>
+            <BentoGrid slides={filteredSlides} />
+            <div className="sliderContainer">
+                <Slider
+                    slides={renderSlides(filteredSlides)}
                     options={sliderOptions}
                     className="diverse-content-slider"
                 />
