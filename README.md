@@ -53,6 +53,10 @@ npm install
 # 3. Démarrer le projet
 cd backend
 npm run dev
+
+# 4. Démarrer le frontend
+cd ../frontend
+npm run dev
 ```
 
 ---
