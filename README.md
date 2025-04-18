@@ -47,16 +47,25 @@ Créer une app simple et interactive, type **mur de post-its**, avec les fonctio
 # 1. Cloner le projet
 git clone https://github.com/dFuZer/feedback-app
 
-# 2. Installer les dépendances
+
+# 2. Démarrer le backend
+cd backend
+npm install
+npm run db:init
+
+## Don't forget to rename .env.example into .env and modify the environment variables before running
+
+npm run dev ## Development mode
+npm run start ## Production mode
+
+# 3. Démarrer le frontend
+cd frontend
 npm install
 
-# 3. Démarrer le projet
-cd backend
-npm run dev
+npm run build ## Production mode
+npm run preview
 
-# 4. Démarrer le frontend
-cd ../frontend
-npm run dev
+npm run dev ## Development mode
 ```
 
 ---
