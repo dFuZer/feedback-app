@@ -91,23 +91,6 @@ const Slider: React.FC<SliderProps> = ({
             </ul>
           </div>
   
-          <div className="glide__arrows" data-glide-el="controls">
-            <button
-              className="glide__arrow glide__arrow--left"
-              data-glide-dir="<"
-              aria-label="Précédent"
-            >
-              &#10094;
-            </button>
-            <button
-              className="glide__arrow glide__arrow--right"
-              data-glide-dir=">"
-              aria-label="Suivant"
-            >
-              &#10095;
-            </button>
-          </div>
-  
           <div className="glide__bullets" data-glide-el="controls[nav]">
             {slides.map((_, index) => (
               <button
