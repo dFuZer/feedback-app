@@ -18,7 +18,7 @@ beforeAll(async () => {
     await seedInitializedDatabase();
 });
 
-describe("POST /feedback/submit", () => {
+describe("/feedback routes", () => {
     it("should return empty array initially", async () => {
         const res = await request(app).get("/feedback/get-all");
         expect(res.body).toEqual([]);
