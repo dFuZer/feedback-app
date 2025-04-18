@@ -14,7 +14,9 @@ const Main: React.FC = () => {
         queryKey: ["categories"],
         queryFn: getCategories,
     });
+
     const [initialLoaded, setInitialLoaded] = useState<boolean>(false);
+    const[searchQuery, setSearchQuery] = useState<string>("");
 
     const feedbacks = useMemo(() => feedbackQuery.data ?? [], [feedbackQuery.data]);
     type Feedback = (typeof feedbacks)[number];
@@ -53,7 +55,7 @@ const Main: React.FC = () => {
     return (
         <div className="pageWrapper">
             <FeedbackForm />
-            <SearchBar onSearch={onSearchButtonClick} />
+            <SearchBar onSearch={onSearchButtonClick} query={searchQuery} setQuery={setSearchQuery} />
             <div className="blocButton">
                 <button className="buttonFilter" onClick={() => handleCategoryClick(null)}>
                     Toutes les catégories
