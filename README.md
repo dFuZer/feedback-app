@@ -52,6 +52,7 @@ git clone https://github.com/dFuZer/feedback-app
 cd backend
 npm install
 npm run db:init
+npm run db:sample # Optional, adds sample data to the db
 
 ## Don't forget to rename .env.example into .env and modify the environment variables before running
 
