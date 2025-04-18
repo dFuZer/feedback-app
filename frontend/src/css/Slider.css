@@ -15,9 +15,9 @@
     justify-content: center;
     background-color: #f8f9fa;
     border-radius: 8px;
-    box-shadow: 0 2px 7px rgba(0,0,0,0.4);
-    border: 1px solid #2D5462;
-    background-color: #E1F2F0;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2d5462;
+    background-color: #e1f2f0;
     text-align: center;
 }
 
@@ -26,13 +26,13 @@
     font-size: 1rem;
     color: #444;
 }
-  
+
 .diverse-content-slider .glide__bullet {
     background-color: #ddd;
 }
-  
+
 .diverse-content-slider .glide__bullet--active {
-    background-color: #2D5462;
+    background-color: #2d5462;
 }
 
 .glide {

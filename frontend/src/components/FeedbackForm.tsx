@@ -25,32 +25,53 @@ const FeedbackForm: React.FC = () => {
     };
 
     return (
-        <div className="main">
-            <h2>Faire un feedback</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Titre :" />
+        <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+            <div className="main">
+                <h2>Envoyer un feedback</h2>
+                <form className="feedbackForm" onSubmit={handleSubmit}>
+                    <label className="formLabel" htmlFor="title">
+                        Titre :
+                    </label>
+                    <input
+                        id="title"
+                        className="formInput"
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        placeholder="Saisissez un titre"
+                    />
 
-                <label htmlFor="category">Choisir une catégorie :</label>
-                <select id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
-                    <option value=""></option>
-                    {categories.data?.map((category) => (
-                        <option key={category.id} value={category.id}>
-                            {category.name}
-                        </option>
-                    ))}
-                </select>
-
-                <textarea
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Écrivez votre message ici"
-                    rows={10}
-                />
-                <br />
-                <button className="secondButton" type="submit">
-                    Envoyer
-                </button>
-            </form>
+                    <label className="formLabel" htmlFor="category">
+                        Catégorie :
+                    </label>
+                    <select
+                        className="formSelect"
+                        id="category"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                    >
+                        <option value="">Choisir une catégorie</option>
+                        {categories.data?.map((category) => (
+                            <option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>
+                        ))}
+                    </select>
+                    <label className="formLabel" htmlFor="message">
+                        Message :
+                    </label>
+                    <textarea
+                        id="message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder="Saisissez votre message"
+                        rows={10}
+                    />
+                    <button className="secondButton" type="submit">
+                        Envoyer
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };

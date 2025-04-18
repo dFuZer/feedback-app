@@ -1,12 +1,10 @@
-body.form-open {
-    background-color: #9b9b9b; 
-    transition: background-color 0.3s ease; 
-}
-
 .main {
-    width: 17rem;
+    max-width: 30rem;
+    flex: 1;
+    margin-right: 1rem;
+    margin-left: 1rem;
     padding: 2rem;
-    background: antiquewhite;
+    background: #fff;
     margin-bottom: 15px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -18,7 +16,7 @@ body.form-open {
 }
 
 .main:hover {
-    box-shadow: 1px 1px 77px -14px rgba(0,0,0,0.75);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .main h2 {
@@ -26,20 +24,28 @@ body.form-open {
     margin-top: 0;
 }
 
-form {
+.feedbackForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
 }
 
-input {
-    margin-bottom: 25px;
-    padding: 2px;
+.formInput {
+    background: transparent;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    padding-left: 0.5rem !important;
+    padding-bottom: 0.3rem !important;
     width: 100%;
+}
+
+.feedbackForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.2rem;
 }
 
 textarea {
@@ -70,7 +76,6 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .firstButton {
@@ -87,7 +92,7 @@ textarea {
     width: 130px;
     padding: 10px 20px;
     margin: 0 auto;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     border: none;
     border-radius: 5px;
@@ -98,12 +103,12 @@ textarea {
     background-color: #45a049;
 }
 
-select {
+.formSelect {
+    font-size: 0.8rem !important;
     padding: 2px 0;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 7px 0 25px;
     width: 100%;
 }
 
@@ -124,4 +129,10 @@ select {
     align-items: center;
     justify-content: flex-start;
     // background-color: #fff;
+}
+
+.formLabel {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #333;
 }
