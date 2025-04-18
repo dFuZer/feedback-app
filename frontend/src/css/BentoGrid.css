@@ -1,20 +1,38 @@
 .bento-grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
     width: 80%;
     margin: 2rem auto;
-  }
+}
+
+@media (min-width: 1200px) {
+    .bento-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+   }
+}
   
-  .bento-grid-item {
+.bento-grid-item {
     background: #f7f7f7;
     padding: 1rem;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s;
-  }
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--card-color);
+}
   
-  .bento-grid-item:hover {
-    transform: translateY(-4px);
-  }
-  
+.bento-grid-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+.bento-grid-item h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.bento-grid-item p {
+  font-style: italic;
+    font-size: 1rem;
+    line-height: 1.4;
+}
