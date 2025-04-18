@@ -1,16 +1,19 @@
 import React from "react";
-import Main from "./components/Main/Main";
+import "./App.css";
+import "./assets/styles/index.scss";
 import Filter from "./components/Filter/Filter";
-import './assets/styles/index.scss'
-import "./App.css"
+import Main from "./components/Main/Main";
+import TanstackQueryProvider from "./providers/TanstackQueryProvider";
 
 const App: React.FC = () => {
     return (
         <div>
-            <Main />
-            <Filter />
+            <TanstackQueryProvider>
+                <Main />
+                <Filter />
+            </TanstackQueryProvider>
         </div>
-    )
-}
+    );
+};
 
 export default App;
