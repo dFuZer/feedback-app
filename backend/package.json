@@ -1,37 +1,37 @@
 {
-	"name": "backend",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"dev:build": "tsc -w",
-		"dev:run": "nodemon --env-file=.env --delay 100ms --watch dist dist/index.js",
-		"dev": "tsc && concurrently npm:dev:*",
-		"start": "tsc && node --env-file=.env dist/index.js",
-		"db:init": "tsc && node --env-file=.env dist/scripts/seed.js",
-		"test": "jest --coverage",
-		"test:watch": "jest --watchAll"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"type": "commonjs",
-	"devDependencies": {
-		"@types/express": "^5.0.1",
-		"@types/jest": "^29.5.14",
-		"@types/node": "^22.14.1",
-		"@types/sqlite3": "^3.1.11",
-		"@types/supertest": "^6.0.3",
-		"concurrently": "^9.1.2",
-		"jest": "^29.7.0",
-		"nodemon": "^3.1.9",
-		"supertest": "^7.1.0",
-		"typescript": "^5.8.3"
-	},
-	"dependencies": {
-		"express": "^5.1.0",
-		"sqlite": "^5.1.1",
-		"sqlite3": "^5.1.7",
-		"zod": "^4.0.0-beta.20250417T043022"
-	}
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev:build": "tsc -w",
+        "dev:run": "nodemon --env-file=.env --delay 100ms --watch dist dist/index.js",
+        "dev": "tsc && concurrently npm:dev:*",
+        "start": "tsc && node --env-file=.env dist/index.js",
+        "db:init": "tsc && node --env-file=.env dist/scripts/seedScript.js",
+        "test": "tsc && jest --coverage",
+        "test:watch": "tsc && jest --watchAll"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "devDependencies": {
+        "@types/express": "^5.0.1",
+        "@types/jest": "^29.5.14",
+        "@types/node": "^22.14.1",
+        "@types/sqlite3": "^3.1.11",
+        "@types/supertest": "^6.0.3",
+        "concurrently": "^9.1.2",
+        "jest": "^29.7.0",
+        "nodemon": "^3.1.9",
+        "supertest": "^7.1.0",
+        "typescript": "^5.8.3"
+    },
+    "dependencies": {
+        "express": "^5.1.0",
+        "sqlite": "^5.1.1",
+        "sqlite3": "^5.1.7",
+        "zod": "^4.0.0-beta.20250417T043022"
+    }
 }
