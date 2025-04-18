@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import Slider from '../Slider';
 import FeedbackForm from '../FeedbackForm';
 import SearchBar from '../Searchbar';
+import slidesArray from '../../data/slidesData.json';
+import { renderSlides } from '../../utils/renderSlides';
 
 const Main: React.FC = () => {
     const [showForm, setShowForm] = useState<boolean>(false);
+    const [filteredSlides, setFilteredSlides] = useState(slidesArray);
 
     const sliderOptions = {
         type: "carousel" as "carousel",
@@ -20,54 +23,15 @@ const Main: React.FC = () => {
         }
     };
 
-    const onSearchButtonClick = async (query: string) => {
-        try {
-          
-          
-        } catch (err) {
-          console.error("Erreur de recherche :", err);
-        }
-      };
-
-    const slidesArray = [
-        <div className="slide-content">
-            <div className="feedback-title">
-                <strong>La tarte</strong>
-            </div>
-            <blockquote>
-                "Sans vouloir la ramener, la seule différence concrète avec des briques, c'est que vous appelez ça des tartes hein !"
-            </blockquote>
-        </div>,
-
-        <div className="slide-content">
-            <div className="feedback-title">
-                <strong>Démon ou pucelle ?</strong>
-            </div>
-            <blockquote>
-                "- C'est vrai que vous êtes le fils d'un démon et d'une pucelle ?
-                - Oui pourquoi ?
-                - Vous avez plus pris de la pucelle…"
-            </blockquote>
-        </div>,
-
-        <div className="slide-content">
-            <div className="feedback-title">
-                <strong>Temporalité</strong>
-            </div>
-            <blockquote>
-                "De toute façon, les réunions de la Table Ronde c'est deux fois par mois. Donc si le mec il dit après-demain à partir de dans deux jours, suivant s'il le dit à la fin du mois, ça reporte."
-            </blockquote>
-        </div>,
-
-        <div className="slide-content">
-            <div className="feedback-title">
-                <strong>Burn out</strong>
-            </div>
-            <blockquote>
-                "Non, moi je crois qu'il faut que vous arrêtiez d'essayer de dire des trucs… Ça vous fatigue, déjà. Puis pour les autres vous vous rendez pas compte de ce que c'est. Moi, quand vous faites ça, ça me fout une angoisse… Je pourrais vous tuer je crois. De chagrin hein. Je vous jure, c'est pas bien. Il faut plus que vous parliez avec des gens."
-            </blockquote>
-        </div>,
-    ]
+    const onSearchButtonClick = (query: string) => {
+        const lowerQuery = query.toLowerCase();
+        const filtered = slidesArray.filter(
+          (slide) =>
+            slide.title.toLowerCase().includes(lowerQuery) ||
+            slide.content.toLowerCase().includes(lowerQuery)
+        );
+        setFilteredSlides(filtered);
+    };
 
     return (
         <div className="pageWrapper">
@@ -77,9 +41,9 @@ const Main: React.FC = () => {
                         Afficher le formulaire
                     </button>
                     <div className="sliderContainer">
-                        <SearchBar onSearch={(query) => console.log(query)} />
+                        <SearchBar onSearch={onSearchButtonClick} />
                         <Slider 
-                            slides={slidesArray} 
+                            slides={renderSlides(filteredSlides)}
                             options={sliderOptions}
                             className="diverse-content-slider"
                         />
@@ -91,7 +55,7 @@ const Main: React.FC = () => {
                     <div className="sliderContainer">
                         <SearchBar onSearch={onSearchButtonClick} />
                         <Slider 
-                            slides={slidesArray} 
+                            slides={renderSlides(filteredSlides)}
                             options={sliderOptions}
                             className="diverse-content-slider"
                         />
