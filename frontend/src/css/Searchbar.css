@@ -9,7 +9,7 @@
     width: 100%;
     max-width: 25rem;
     background-color: #fff;
-    margin-bottom: 2.5rem;
+    margin: 2.5rem 0;
 }
   
 .search-input input[type="text"] {
