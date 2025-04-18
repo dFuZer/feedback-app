@@ -1,18 +1,126 @@
 [
-    {
-      "title": "La tarte",
-      "content": "Sans vouloir la ramener, la seule différence concrète avec des briques, c'est que vous appelez ça des tartes hein !"
-    },
-    {
-      "title": "Démon ou pucelle ?",
-      "content": "- C'est vrai que vous êtes le fils d'un démon et d'une pucelle ? - Oui pourquoi ? - Vous avez plus pris de la pucelle…"
-    },
-    {
-      "title": "Temporalité",
-      "content": "De toute façon, les réunions de la Table Ronde c'est deux fois par mois..."
-    },
-    {
-      "title": "Burn out",
-      "content": "Non, moi je crois qu'il faut que vous arrêtiez d'essayer de dire des trucs… Ça vous fatigue..."
-    }
+  {
+    "title": "Formation JavaScript",
+    "content": "J’ai enfin compris les closures grâce à cette formation, un grand merci !"
+  },
+  {
+    "title": "UX/UI Design",
+    "content": "La formation était claire, ludique et super bien rythmée. J’ai adoré !"
+  },
+  {
+    "title": "React pour les nuls",
+    "content": "Je n’étais pas très à l’aise avec React mais maintenant je code avec plaisir."
+  },
+  {
+    "title": "Bonne ambiance",
+    "content": "Le formateur était top, bonne ambiance et pédagogie au rendez-vous."
+  },
+  {
+    "title": "Trop de théorie",
+    "content": "Pas assez de pratique à mon goût. J’aurais aimé plus de cas concrets."
+  },
+  {
+    "title": "Formation express",
+    "content": "Très intense, mais efficace. J’ai appris plein de choses en peu de temps."
+  },
+  {
+    "title": "Back-end Node.js",
+    "content": "Très bon contenu, mais attention à la vitesse d’exécution, parfois trop rapide."
+  },
+  {
+    "title": "Support au top",
+    "content": "L’équipe support a toujours répondu à mes questions rapidement."
+  },
+  {
+    "title": "Pas débutant-friendly",
+    "content": "Il faut déjà avoir des bases, ce n’est pas pour les vrais débutants."
+  },
+  {
+    "title": "Approche concrète",
+    "content": "Chaque notion est accompagnée d’un exemple de projet. Très pratique !"
+  },
+  {
+    "title": "Mise à jour régulière",
+    "content": "Le contenu est mis à jour régulièrement, c’est un vrai plus."
+  },
+  {
+    "title": "Manque d’exercices",
+    "content": "Les cours sont bien, mais j’aurais aimé plus d’exercices pratiques."
+  },
+  {
+    "title": "Apprentissage fluide",
+    "content": "L’organisation du cours est fluide, on progresse sans s’en rendre compte."
+  },
+  {
+    "title": "Formateur inspirant",
+    "content": "Le formateur est passionné et ça se ressent dans ses explications."
+  },
+  {
+    "title": "Super ressources",
+    "content": "Beaucoup de liens utiles, templates, cheatsheets, c’est vraiment complet."
+  },
+  {
+    "title": "Formation Python",
+    "content": "Simple, efficace et bien structurée. Je recommande vivement."
+  },
+  {
+    "title": "Trop rapide",
+    "content": "La formation va trop vite pour les débutants, dommage."
+  },
+  {
+    "title": "Git & GitHub",
+    "content": "J’ai enfin compris comment faire des merges sans tout casser."
+  },
+  {
+    "title": "Bonne structure",
+    "content": "La progression est logique, c’est facile à suivre même en autonomie."
+  },
+  {
+    "title": "Peu de feedbacks",
+    "content": "J’aurais aimé avoir plus de retours sur mes exercices."
+  },
+  {
+    "title": "Adaptée à mon rythme",
+    "content": "J’ai pu avancer à mon rythme, parfait pour concilier avec le travail."
+  },
+  {
+    "title": "Pas assez de visuels",
+    "content": "Trop de texte, pas assez de schémas pour illustrer les concepts."
+  },
+  {
+    "title": "Vraiment utile",
+    "content": "Chaque module m’a servi concrètement dans mes projets pro."
+  },
+  {
+    "title": "Répétitif",
+    "content": "Un peu trop de répétitions, surtout dans les parties théoriques."
+  },
+  {
+    "title": "Super accessible",
+    "content": "Même avec peu de bases, j’ai tout compris grâce aux explications simples."
+  },
+  {
+    "title": "Formation très claire",
+    "content": "Pas de jargon inutile, tout est expliqué simplement et efficacement."
+  },
+  {
+    "title": "Communauté active",
+    "content": "Le forum est super actif, on ne reste jamais bloqué longtemps."
+  },
+  {
+    "title": "Méthodologie au top",
+    "content": "J’ai appris à structurer mes projets de façon bien plus professionnelle."
+  },
+  {
+    "title": "Suivi individualisé",
+    "content": "J’ai été suivi tout au long du parcours, c’est rassurant."
+  },
+  {
+    "title": "Bon rapport qualité/prix",
+    "content": "La qualité est au rendez-vous pour un prix très abordable."
+  },
+  {
+    "title": "Je recommande !",
+    "content": "J’ai déjà conseillé cette formation à plusieurs collègues."
+  }
   ]
