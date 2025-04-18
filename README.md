@@ -63,6 +63,8 @@ npm run start ## Production mode
 cd frontend
 npm install
 
+## Don't forget to rename .env.example into .env and modify the environment variables before running
+
 npm run build ## Production mode
 npm run preview
 
