@@ -16,7 +16,7 @@ const Main: React.FC = () => {
     });
 
     const [initialLoaded, setInitialLoaded] = useState<boolean>(false);
-    const[searchQuery, setSearchQuery] = useState<string>("");
+    const [searchQuery, setSearchQuery] = useState<string>("");
 
     const feedbacks = useMemo(() => feedbackQuery.data ?? [], [feedbackQuery.data]);
     type Feedback = (typeof feedbacks)[number];

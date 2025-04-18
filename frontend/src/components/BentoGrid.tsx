@@ -1,5 +1,5 @@
-import React from 'react';
-import '../css/BentoGrid.css';
+import React from "react";
+import "../css/BentoGrid.css";
 
 type Slide = {
   title: string;
@@ -8,16 +8,10 @@ type Slide = {
 };
 
 type Props = {
-  slides: Slide[];
+    slides: Slide[];
 };
 
-const pastelColors = [
-  "#E1F2F0", 
-  "#FFF8D6", 
-  "#FFE4C3", 
-  "#E9E1FA", 
-  "#FCE1EC", 
-];
+const pastelColors = ["#E1F2F0", "#FFF8D6", "#FFE4C3", "#E9E1FA", "#FCE1EC"];
 
 const BentoGrid: React.FC<Props> = ({ slides }) => {
   return (

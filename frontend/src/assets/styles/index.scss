@@ -1,3 +1,23 @@
-@use './main';
-@use './filter';
-@use './header'
+@use "./main";
+@use "./filter";
+@use "./header";
+
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+    font-size: 0.7rem !important;
+}
+
+textarea {
+    padding: 0.5rem;
+    resize: none;
+}
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+    box-sizing: border-box;
+    border: 0 solid;
+}
