@@ -1,8 +1,11 @@
 import React from 'react'
+import logo from '../../assets/Icons/feedback.png'
 
 function Header() {
   return (
-    <div>Header</div>
+    <div className='header'>
+      <img src={logo} alt="Logo" />
+    </div>
   )
 }
 
