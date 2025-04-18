@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { getCategories } from "../data/api";
+import { API_URL } from "../utils/env";
 
 const FeedbackForm: React.FC = () => {
     const [message, setMessage] = useState<string>("");
@@ -12,15 +13,37 @@ const FeedbackForm: React.FC = () => {
         queryFn: getCategories,
     });
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        if (!message || category === "" || !title) {
-            alert("Veuillez entrer un titre, un message et séléctionner une catégorie avant de soumettre.");
-        } else {
-            alert("Votre feedback a été soumis !");
-            setMessage("");
-            setCategory("");
-            setTitle("");
+
+        if(!message || category === "" || !title) {
+            return alert("Veuillez entrer un titre, un message et séléctionner une catégorie avant de soumettre.");
+        }
+        
+        try {
+            const feedbackData = {
+                title: title,
+                content: message,
+                categoryId: Number(category),
+            };
+            const response = await fetch(`${API_URL}/feedback/submit`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(feedbackData),
+            });
+            if (!response.ok) {
+                throw new Error("Une erreur s'est produite lors de l'envoi du feedback. Veuillez réessayer plus tard.");
+            } else {
+                alert("Votre feedback a été soumis !");
+                setMessage("");
+                setCategory("");
+                setTitle("");
+            }
+        } catch (error) {
+            console.error("Erreur lors de l'envoi du feedback :", error);
+            alert("Une erreur s'est produite lors de l'envoi du feedback. Veuillez réessayer plus tard.");
         }
     };
 
