@@ -1,7 +1,7 @@
-// Main.tsx
 import React, { useState } from 'react';
 import Slider from '../Slider';
 import FeedbackForm from '../FeedbackForm';
+import SearchBar from '../Searchbar';
 
 const Main: React.FC = () => {
     const [showForm, setShowForm] = useState<boolean>(false);
@@ -19,6 +19,15 @@ const Main: React.FC = () => {
             768: { perView: 1 }
         }
     };
+
+    const onSearchButtonClick = async (query: string) => {
+        try {
+          
+          
+        } catch (err) {
+          console.error("Erreur de recherche :", err);
+        }
+      };
 
     const slidesArray = [
         <div className="slide-content">
@@ -67,8 +76,8 @@ const Main: React.FC = () => {
                     <button className='firstButton' onClick={() => setShowForm(true)}>
                         Afficher le formulaire
                     </button>
-
                     <div className="sliderContainer">
+                        <SearchBar onSearch={(query) => console.log(query)} />
                         <Slider 
                             slides={slidesArray} 
                             options={sliderOptions}
@@ -79,8 +88,8 @@ const Main: React.FC = () => {
             ) : (
                 <>
                     <FeedbackForm onClose={() => setShowForm(false)} />
-                    
                     <div className="sliderContainer">
+                        <SearchBar onSearch={onSearchButtonClick} />
                         <Slider 
                             slides={slidesArray} 
                             options={sliderOptions}
