@@ -1,6 +1,7 @@
 export interface Slide {
   title: string;
   content: string;
+  category: string;
 }
 
 export const renderSlides = (data: Slide[]) =>

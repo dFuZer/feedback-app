@@ -42,6 +42,17 @@ const Main: React.FC = () => {
         setFilteredSlides(filtered);
     };
 
+    const mappedSlides = useMemo(() => {
+        return filteredSlides.map((slide) => {
+            const category = categoriesQuery.data?.find(cat => cat.id === slide.category_id)?.name || "Inconnue";
+            return {
+                title: slide.title,
+                content: slide.content,
+                category,
+            };
+        });
+    }, [filteredSlides, categoriesQuery.data]);
+
     const handleCategoryClick = (categoryId: string | null) => {
         if (categoryId === null) {
             console.log(feedbacks);
@@ -66,7 +77,7 @@ const Main: React.FC = () => {
                     </button>
                 ))}
             </div>
-            <BentoGrid slides={filteredSlides} />
+            <BentoGrid slides={mappedSlides} />
         </div>
     );
 };

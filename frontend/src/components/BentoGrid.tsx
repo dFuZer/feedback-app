@@ -4,6 +4,7 @@ import '../css/BentoGrid.css';
 type Slide = {
   title: string;
   content: string;
+  category: string;
 };
 
 type Props = {
@@ -28,6 +29,7 @@ const BentoGrid: React.FC<Props> = ({ slides }) => {
             key={index}
             className="bento-grid-item"
             style={{ backgroundColor: color }}>
+              <span className="bento-category">{slide.category}</span>
             <h3>{slide.title}</h3>
             <p>{slide.content}</p>
           </div>
