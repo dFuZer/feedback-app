@@ -2,11 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { getCategories } from "../data/api";
 
-interface FeedbackFormProps {
-    onClose: () => void;
-}
-
-const FeedbackForm: React.FC<FeedbackFormProps> = ({ onClose }) => {
+const FeedbackForm: React.FC = () => {
     const [message, setMessage] = useState<string>("");
     const [category, setCategory] = useState<string>("");
     const [title, setTitle] = useState<string>("");
@@ -25,7 +21,6 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ onClose }) => {
             setMessage("");
             setCategory("");
             setTitle("");
-            onClose();
         }
     };
 
