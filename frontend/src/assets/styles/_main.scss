@@ -1,15 +1,16 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+// html, body {
+//     height: 100%;
+//     margin: 0;
+//     padding: 0;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
   
 
 .main {
-    width: 100%;
+    width: 50%;
+    margin: 200px auto;
     padding: 2rem;
     background: antiquewhite;
     border-radius: 12px;
@@ -39,6 +40,23 @@ textarea {
     border-radius: 5px;
     margin-bottom: 10px;
     resize: vertical;
+}
+
+.blocFirstButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.firstButton {
+    margin-top: 40%;
+    padding: 15px 40px;
+    margin-bottom: 50px;
+    background-color: #c0ffc3;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .secondButton {

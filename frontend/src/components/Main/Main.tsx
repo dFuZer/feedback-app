@@ -34,7 +34,9 @@ const Main: React.FC = () => {
     return (
         <div>
             {!showForm && (
-                <button className='firstButton' onClick={() => setShowForm(true)}>Afficher le formulaire</button>
+                <div className='blocFirstButton'>
+                    <button className='firstButton' onClick={() => setShowForm(true)}>Afficher le formulaire</button>
+                </div>
             )}
 
             {showForm && (
