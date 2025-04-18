@@ -1,7 +1,7 @@
-import { getDb } from "../db";
+import getDb from "./db";
 
-async function seed() {
-    const db = await getDb();
+export async function seedInitializedDatabase() {
+    const db = getDb();
 
     await db.run(
         "CREATE TABLE feedback (id INTEGER PRIMARY KEY AUTOINCREMENT, category_id INTEGER NOT NULL, title VARCHAR(30), content TEXT, likes INTEGER DEFAULT 0, created_at DATETIME DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (category_id) REFERENCES category(id))"
@@ -16,5 +16,3 @@ async function seed() {
     await db.run("INSERT INTO category (name) VALUES ('Administration')");
     await db.run("INSERT INTO category (name) VALUES ('Autre')");
 }
-
-seed();
