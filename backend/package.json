@@ -9,6 +9,7 @@
         "dev": "tsc && concurrently npm:dev:*",
         "start": "tsc && node --env-file=.env dist/index.js",
         "db:init": "tsc && node --env-file=.env dist/scripts/seedScript.js",
+        "db:sample": "tsc && node --env-file=.env dist/scripts/sampleDataScript.js",
         "test": "tsc && jest --coverage",
         "test:watch": "tsc && jest --watchAll"
     },
